@@ -16,7 +16,6 @@ public class CustomerDto {
     private String name;
 
     private Integer age;
-    private String contactType;
     private PassportEntity passport;
     private List<CourseDto> courseDtoList;
 }
