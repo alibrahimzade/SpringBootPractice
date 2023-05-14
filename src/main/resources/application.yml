@@ -4,11 +4,16 @@ spring:
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
-    jpa:
-#      generate-ddl: true
-      show-sql: true
+  jpa:
+#   generate-ddl: true
+    show-sql: true
 #    hibernate:
 #          ddl-auto: update
+  liquibase:
+     change-log: classpath:liquibase/1.0/changelog-4.sql
+
+
+
 
 springdoc:
   apiDocs:
@@ -16,6 +21,7 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: 'true'
+
 
 server:
   port: 8000

@@ -2,7 +2,9 @@ package com.example.relationships_practice.service;
 
 import com.example.relationships_practice.dao.CustomerEntity;
 import com.example.relationships_practice.exceptions.NoSuchCustomerException;
+import com.example.relationships_practice.mapper.CourseMapper;
 import com.example.relationships_practice.mapper.CustomerMapper;
+import com.example.relationships_practice.model.CourseDto;
 import com.example.relationships_practice.model.CustomerDto;
 import com.example.relationships_practice.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,12 +22,26 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
 
-    public CustomerDto getById(Long id){
-        log.info("we are looking for the customer");
+//    public CustomerDto getById(Long id){
+//        log.info("we are looking for the customer");
+//
+//        CustomerEntity customerEntity = customerRepository.findById(id)
+//                .orElseThrow(() -> new NoSuchCustomerException("Customer is not found"));
+//
+//        return CustomerMapper.INSTANCE.mapEntityToDto(customerEntity);
+//    }
+
+    public  CustomerDto getById(Long id){
 
         CustomerEntity customerEntity = customerRepository.findById(id)
                 .orElseThrow(() -> new NoSuchCustomerException("Customer is not found"));
-        return CustomerMapper.INSTANCE.mapEntityToDto(customerEntity);
+
+
+//        List<CourseDto> courseDto = CourseMapper.INSTANCE.mapEntityToDtoList(customerEntity.getCourseList());
+        CustomerDto customerDto = CustomerMapper.INSTANCE.mapEntityToDto(customerEntity);
+//        customerDto.setCourseDtoList(courseDto);
+
+        return customerDto;
     }
 
 

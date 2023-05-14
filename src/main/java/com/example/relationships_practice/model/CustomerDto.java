@@ -1,8 +1,11 @@
 package com.example.relationships_practice.model;
 
+import com.example.relationships_practice.dao.PassportEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -13,8 +16,7 @@ public class CustomerDto {
     private String name;
 
     private Integer age;
-    private String serialNumber;
-
-    private String courseName;
     private String contactType;
+    private PassportEntity passport;
+    private List<CourseDto> courseDtoList;
 }

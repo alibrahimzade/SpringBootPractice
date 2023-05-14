@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - includeAll:
+      path: classpath:liquibase/1.0
+#
+#  - includeAll:
+#      path: c
