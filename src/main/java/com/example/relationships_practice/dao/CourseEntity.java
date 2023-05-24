@@ -21,7 +21,7 @@ public class CourseEntity {
     @Column(name = "course_name")
     private String courseName;
 
-    @ManyToMany(mappedBy = "courseList")
+    @ManyToMany(mappedBy = "courseList", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<CustomerEntity> customerEntityList;
 }

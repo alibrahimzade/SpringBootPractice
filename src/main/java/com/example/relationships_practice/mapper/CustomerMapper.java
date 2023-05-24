@@ -20,6 +20,6 @@ public interface CustomerMapper {
     CustomerDto mapEntityToDto(CustomerEntity customerEntity);
 
 
-
+    @Mapping(target = "courseList" , source = "courseDtoList")
     CustomerEntity mapDtoToEntity(CustomerDto customerDto);
 }
